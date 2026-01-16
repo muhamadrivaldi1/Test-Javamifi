@@ -1,0 +1,11 @@
+.page-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
