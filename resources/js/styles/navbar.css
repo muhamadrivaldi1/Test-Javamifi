@@ -31,3 +31,9 @@
     font-size: 14px;
     opacity: 0.9;
 }
+
+.navbar {
+    height: 60px;
+    flex-shrink: 0;
+}
+

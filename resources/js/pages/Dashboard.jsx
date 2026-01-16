@@ -39,6 +39,17 @@ export default function Dashboard() {
         ]
     };
 
+    const revenueOptions = {
+        responsive: true,
+        maintainAspectRatio: false, // PENTING
+        plugins: {
+            legend: {
+                position: 'top'
+            }
+        }
+    };
+
+
     return (
         <div className="dashboard">
             <h1 className="dashboard-title">Dashboard</h1>
@@ -79,7 +90,7 @@ export default function Dashboard() {
             {/* CHART */}
             <div className="dashboard-chart">
                 <h2>Revenue Growth</h2>
-                <Line data={revenueData} />
+                <Line data={revenueData} options={revenueOptions} />
             </div>
         </div>
     );
