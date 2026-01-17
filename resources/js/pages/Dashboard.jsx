@@ -10,7 +10,7 @@ import {
     Tooltip,
     Legend,
 } from "chart.js";
-import api from "../services/api"; // pastikan ini sudah ada
+import api from "../services/api";
 import "../styles/dashboard.css";
 
 ChartJS.register(
@@ -34,11 +34,9 @@ export default function Dashboard() {
 
     const fetchDashboardData = async () => {
         try {
-            // TOTAL PRODUCTS
             const productsRes = await api.get("/products");
             setTotalProducts(productsRes.data.length);
 
-            // TRANSACTIONS
             const transactionsRes = await api.get("/transactions");
             const transactions = transactionsRes.data || [];
 
@@ -107,7 +105,6 @@ export default function Dashboard() {
         <div className="dashboard">
             <h1 className="dashboard-title">Dashboard</h1>
 
-            {/* SUMMARY CARDS */}
             <div className="dashboard-cards">
                 <div className="dashboard-card">
                     <div className="card-icon blue">
@@ -140,7 +137,7 @@ export default function Dashboard() {
                 </div>
             </div>
 
-            {/* REVENUE CHART */}
+            
             <div className="dashboard-chart">
                 <h2>Revenue Growth</h2>
                 <div style={{ height: "300px" }}>

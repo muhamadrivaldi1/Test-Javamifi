@@ -32,7 +32,6 @@ export default function Transactions() {
         }
     };
 
-    // Popup to create transaction
     const createTransaction = async () => {
         const { value: formValues } = await Swal.fire({
             title: 'Create Transaction',

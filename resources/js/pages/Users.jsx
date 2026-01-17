@@ -7,9 +7,9 @@ import "../styles/page.css";
 export default function Users() {
     const [users, setUsers] = useState([]);
     const [name, setName] = useState("");
-    const [email, setEmail] = useState("");        // kosong
-    const [password, setPassword] = useState("");  // kosong
-    const [role, setRole] = useState("customer");  // default customer
+    const [email, setEmail] = useState("");        
+    const [password, setPassword] = useState("");  
+    const [role, setRole] = useState("customer");  
 
     useEffect(() => {
         fetchUsers();

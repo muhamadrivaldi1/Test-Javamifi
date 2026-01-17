@@ -6,7 +6,6 @@ import '../styles/page.css';
 export default function Products() {
     const [products, setProducts] = useState([]);
 
-    // Fetch all products
     const fetchProducts = async () => {
         try {
             const res = await api.get('/products');
@@ -21,7 +20,6 @@ export default function Products() {
         fetchProducts();
     }, []);
 
-    // Handle add product using SweetAlert2
     const addProduct = async () => {
         const { value: formValues } = await Swal.fire({
             title: 'Add New Product',

@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import "../styles/page.css";
-
-// PDF & Excel
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 import * as XLSX from "xlsx";
@@ -17,7 +15,6 @@ export default function Reports() {
     fetchInventory();
   }, []);
 
-  // Fetch Sales
   const fetchSales = async () => {
     try {
       const res = await api.get("/reports/sales");
@@ -28,7 +25,6 @@ export default function Reports() {
     }
   };
 
-  // Fetch Inventory
   const fetchInventory = async () => {
     try {
       const res = await api.get("/reports/inventory");
@@ -38,8 +34,6 @@ export default function Reports() {
       setInventory([]);
     }
   };
-
-  // Export Excel
   const exportExcel = (data, sheetName, fileName) => {
     const worksheet = XLSX.utils.json_to_sheet(data);
     const workbook = XLSX.utils.book_new();
@@ -49,14 +43,12 @@ export default function Reports() {
     saveAs(blob, fileName);
   };
 
-  // Export PDF
   const exportPDF = (data, title, columns) => {
     const doc = new jsPDF();
     doc.text(title, 14, 15);
 
     const rows = data.map((item) =>
       columns.map((col) => {
-        // nested keys support
         if (col.key.includes(".")) {
           const keys = col.key.split(".");
           let val = item;
@@ -85,7 +77,6 @@ export default function Reports() {
     <div className="page">
       <h2 className="page-title">Reports</h2>
 
-      {/* SALES REPORT */}
       <div className="table-card">
         <h3 className="table-title">Sales Report</h3>
         <div style={{ marginBottom: "10px" }}>
@@ -138,7 +129,6 @@ export default function Reports() {
         )}
       </div>
 
-      {/* INVENTORY REPORT */}
       <div className="table-card" style={{ marginTop: "20px" }}>
         <h3 className="table-title">Stock Report</h3>
         <div style={{ marginBottom: "10px" }}>
