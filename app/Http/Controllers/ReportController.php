@@ -3,14 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaction;
 
 class ReportController extends Controller
 {
-    public function sales(){
-        return response()->json(['message' => 'Sales report data']);
-    }
+    // Laporan penjualan
+    // ReportController.php
+public function sales()
+{
+    $transactions = Transaction::with('product')->get();
 
-    public function inventory(){
-        return response()->json(['message' => 'Inventory report data']);
-    }
+    return response()->json($transactions);
+}
+
+public function inventory()
+{
+    $products = \App\Models\Product::all();
+
+    return response()->json($products);
+}
+
 }

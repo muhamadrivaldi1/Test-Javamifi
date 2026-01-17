@@ -1,62 +1,222 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 .page {
-    max-width: 100%;
+    padding: 24px;
 }
 
 .page-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    color: #111827;
 }
 
-/* FORM */
+.page-loading,
+.page-error {
+    padding: 24px;
+    font-size: 16px;
+}
+
+/* =====================================================
+   FORM CARD
+===================================================== */
+
 .form-card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    background: #ffffff;
+    padding: 26px;
+    border-radius: 14px;
     margin-bottom: 30px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
 }
 
-.form-card input {
-    padding: 10px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+/* GRID KHUSUS INPUT */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
 }
 
+/* INPUT & SELECT */
+.form-card input,
+.form-card select {
+    height: 46px;
+    padding: 0 14px;
+    border-radius: 10px;
+    border: 1px solid #e5e7eb;
+    font-size: 14px;
+    width: 100%;
+    background: #ffffff;
+}
+
+/* FOCUS */
+.form-card input:focus,
+.form-card select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* BUTTON */
 .form-card button {
-    background: #6366f1;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
+    margin-top: 22px;
+    align-self: flex-end;
 }
 
-/* TABLE */
+.btn-primary {
+    background: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 32px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-primary:hover {
+    background: #4f46e5;
+}
+
+/* =====================================================
+   TABLE
+===================================================== */
+
 .table-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-    overflow: hidden;
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 14px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
+    min-width: 650px;
 }
 
 thead {
-    background: #f1f5f9;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-    font-size: 14px;
-}
-
-tbody tr:hover {
     background: #f9fafb;
+}
+
+th,
+td {
+    padding: 14px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    text-align: left;
+}
+
+th {
+    font-weight: 600;
+    color: #374151;
+}
+
+/* =====================================================
+   BADGE
+===================================================== */
+
+.badge {
+    padding: 5px 14px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+    display: inline-block;
+}
+
+.badge.admin {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.badge.staff {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.badge.customer {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+/* =====================================================
+   ACTION BUTTON
+===================================================== */
+
+.action-cell {
+    display: flex;
+    gap: 10px;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.icon-btn.edit {
+    background: #e0f2fe;
+    color: #0369a1;
+}
+
+.icon-btn.edit:hover {
+    background: #bae6fd;
+}
+
+.icon-btn.delete {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.icon-btn.delete:hover {
+    background: #fecaca;
+}
+
+/* =====================================================
+   EXTRA
+===================================================== */
+
+.total-price {
+    padding: 12px;
+    background: #f1f5f9;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-card button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .page {
+        padding: 16px;
+    }
+
+    .page-title {
+        font-size: 20px;
+    }
 }
