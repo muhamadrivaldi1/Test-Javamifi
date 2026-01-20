@@ -87,7 +87,7 @@ export default function Reports() {
           >
             Export Excel
           </button>
-          <button
+          {/* <button
             type="button"
             className="btn-primary"
             style={{ marginLeft: "10px" }}
@@ -100,7 +100,7 @@ export default function Reports() {
             }
           >
             Export PDF
-          </button>
+          </button> */}
         </div>
 
         {sales.length > 0 ? (
@@ -139,7 +139,7 @@ export default function Reports() {
           >
             Export Excel
           </button>
-          <button
+          {/* <button
             type="button"
             className="btn-primary"
             style={{ marginLeft: "10px" }}
@@ -152,7 +152,7 @@ export default function Reports() {
             }
           >
             Export PDF
-          </button>
+          </button> */}
         </div>
 
         {inventory.length > 0 ? (

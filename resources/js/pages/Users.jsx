@@ -125,7 +125,7 @@ export default function Users() {
             <h2 className="page-title">User Management</h2>
 
             <button className="btn-primary" onClick={addUser}>
-                + Add User
+                Add User
             </button>
 
             <div className="table-card" style={{ marginTop: "20px" }}>

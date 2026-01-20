@@ -82,7 +82,7 @@ export default function Transactions() {
             <h2 className="page-title">Transactions</h2>
 
             <button className="btn-primary" onClick={createTransaction}>
-                + Create Transaction
+                Create Transaction
             </button>
 
             <div className="table-card" style={{ marginTop: '20px' }}>

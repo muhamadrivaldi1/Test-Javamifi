@@ -80,7 +80,7 @@ export default function Products() {
             <h2 className="page-title">Products</h2>
 
             <button className="btn-primary" onClick={addProduct}>
-                + Add Product
+                Add Product
             </button>
 
             <div className="table-card" style={{ marginTop: '20px' }}>
